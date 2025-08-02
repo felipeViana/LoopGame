@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvimbgjf3ip7j"]
+[gd_scene load_steps=3 format=3 uid="uid://crjw5hqbi8vph"]
 
 [sub_resource type="Gradient" id="Gradient_0t4o4"]
 offsets = PackedFloat32Array(0, 0.316602, 0.741313, 1)
