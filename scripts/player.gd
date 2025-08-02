@@ -21,13 +21,33 @@ func _physics_process(delta: float) -> void:
 	
 	velocity.x = speed * horizontal_direction
 	
+	
+		
+	if horizontal_direction != 0:
+		flip_direction(horizontal_direction)
+	
 	move_and_slide()
-	update_animations()
+	update_animations(horizontal_direction)
 	
 	
-func update_animations():
-	if velocity.y<0:
-		animation_player.play("Jump")
+func update_animations(horizontal_direction):
+	if is_on_floor():
+		if horizontal_direction != 0:
+			animation_player.play("run")
+		else:
+			animation_player.play("idle")	
 	else:
-		animation_player.play("idle")
-	
+		if velocity.y < 0:
+			animation_player.play("Jump")
+		else:
+			animation_player.play("fall")
+		
+func flip_direction(horizontal_direction):
+	if horizontal_direction == -1:
+		sprite.flip_h = true
+		sprite.position.x = -4
+	elif horizontal_direction == 1:
+		sprite.flip_h = false
+		sprite.position.x = 4
+		
+		
