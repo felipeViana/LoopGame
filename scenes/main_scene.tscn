@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://cnd6d0ussddd"]
+
+[ext_resource type="PackedScene" uid="uid://bth0n3a3ghrqf" path="res://scenes/player.tscn" id="1_w2twt"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_w2twt"]
+size = Vector2(1000, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pw63i"]
+size = Vector2(1002, 103)
+
+[sub_resource type="QuadMesh" id="QuadMesh_pw63i"]
+size = Vector2(100, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ykc4"]
+size = Vector2(100, 10)
+
+[node name="World" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_w2twt")]
+position = Vector2(499, 294)
+
+[node name="Platform" type="StaticBody2D" parent="."]
+position = Vector2(544, 587)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform"]
+modulate = Color(0.890196, 0.415686, 0.376471, 1)
+mesh = SubResource("QuadMesh_w2twt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+position = Vector2(-1, 0.5)
+shape = SubResource("RectangleShape2D_pw63i")
+
+[node name="Platform2" type="StaticBody2D" parent="."]
+position = Vector2(1450, 451)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform2"]
+modulate = Color(0.890196, 0.415686, 0.376471, 1)
+mesh = SubResource("QuadMesh_w2twt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2"]
+position = Vector2(-1, 0.5)
+shape = SubResource("RectangleShape2D_pw63i")
+
+[node name="MiniPlatform" type="StaticBody2D" parent="."]
+position = Vector2(798, 516)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="MiniPlatform"]
+mesh = SubResource("QuadMesh_pw63i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MiniPlatform"]
+shape = SubResource("RectangleShape2D_7ykc4")
+
+[node name="MiniPlatform2" type="StaticBody2D" parent="."]
+position = Vector2(892, 481)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="MiniPlatform2"]
+mesh = SubResource("QuadMesh_pw63i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MiniPlatform2"]
+shape = SubResource("RectangleShape2D_7ykc4")
