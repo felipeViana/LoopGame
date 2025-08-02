@@ -293,6 +293,7 @@ texture = ExtResource("2_g2els")
 hframes = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -17)
 shape = SubResource("CapsuleShape2D_4flbx")
 
