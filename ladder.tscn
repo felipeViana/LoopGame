@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnfx1evu383f3"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_qe38t"]
+size = Vector2(100, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cq4ai"]
+size = Vector2(100, 10)
+
+[node name="Ladder" type="Node2D"]
+
+[node name="MiniPlatform2" type="StaticBody2D" parent="."]
+position = Vector2(196, 479)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="MiniPlatform2"]
+mesh = SubResource("QuadMesh_qe38t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MiniPlatform2"]
+shape = SubResource("RectangleShape2D_cq4ai")
+one_way_collision = true
+
+[node name="MiniPlatform3" type="StaticBody2D" parent="."]
+position = Vector2(195, 425)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="MiniPlatform3"]
+mesh = SubResource("QuadMesh_qe38t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MiniPlatform3"]
+shape = SubResource("RectangleShape2D_cq4ai")
+one_way_collision = true
+
+[node name="MiniPlatform4" type="StaticBody2D" parent="."]
+position = Vector2(194, 362)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="MiniPlatform4"]
+mesh = SubResource("QuadMesh_qe38t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MiniPlatform4"]
+shape = SubResource("RectangleShape2D_cq4ai")
+one_way_collision = true
