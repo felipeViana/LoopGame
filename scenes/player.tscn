@@ -8,7 +8,6 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4flbx"]
 radius = 8.0
-height = 34.0
 
 [sub_resource type="Animation" id="Animation_dqkch"]
 resource_name = "Jump"
@@ -293,8 +292,7 @@ texture = ExtResource("2_g2els")
 hframes = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, -17)
+position = Vector2(0, -15)
 shape = SubResource("CapsuleShape2D_4flbx")
 
 [node name="Camera2D" type="Camera2D" parent="."]
