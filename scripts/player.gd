@@ -7,7 +7,8 @@ var jump_force = 600
 @onready var sprite=$Sprite2D
 var max_speed = 1000
 
-func _physics_process(delta: float) -> void:#Handles all of the character physics
+#Handles all of the character physics
+func _physics_process(delta: float) -> void:
 	var horizontal_direction = Input.get_axis("move_left", "move_right")
 	
 	if !is_on_floor():
@@ -25,24 +26,28 @@ func _physics_process(delta: float) -> void:#Handles all of the character physic
 		
 	if horizontal_direction != 0:
 		flip_direction(horizontal_direction)
-	#if Input.is_action_just_pressed("attack"):
+
 	move_and_slide()
 	update_animations(horizontal_direction)
 	
-	
-func update_animations(horizontal_direction): #Checks the current state and applies the correct animation
+#Checks the current state and applies the correct animation
+func update_animations(horizontal_direction): 
 	if is_on_floor():
-		if horizontal_direction != 0:
-			animation_player.play("run")
+		if Input.is_action_just_pressed("attack"):
+			animation_player.play("attack")
 		else:
-			animation_player.play("idle")	
+			if horizontal_direction != 0:
+				animation_player.play("run")
+			else:
+				animation_player.play("idle")	
 	else:
 		if velocity.y < 0:
 			animation_player.play("Jump")
 		else:
 			animation_player.play("fall")
 		
-func flip_direction(horizontal_direction):#checks the direction the player is moving and changes the sprite to face that direction
+#checks the direction the player is moving and changes the sprite to face that direction
+func flip_direction(horizontal_direction):
 	if horizontal_direction == -1:
 		sprite.flip_h = true
 		sprite.position.x = -4
