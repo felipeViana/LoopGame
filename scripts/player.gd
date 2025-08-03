@@ -20,8 +20,6 @@ func _physics_process(delta: float) -> void:
 		velocity.y -= jump_force
 	
 	velocity.x = speed * horizontal_direction
-	
-	
 		
 	if horizontal_direction != 0:
 		flip_direction(horizontal_direction)
