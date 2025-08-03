@@ -80,15 +80,16 @@ position = Vector2(-624, 1342)
 
 [node name="PointLight2D2" parent="." instance=ExtResource("5_rt2n2")]
 position = Vector2(-943, 1519)
+texture_scale = 1.3
 
 [node name="PointLight2D3" parent="." instance=ExtResource("5_rt2n2")]
 position = Vector2(-833, 2062)
 
 [node name="PointLight2D4" parent="." instance=ExtResource("5_rt2n2")]
-position = Vector2(-256, 2080)
+position = Vector2(-543, 2065)
 
 [node name="PointLight2D5" parent="." instance=ExtResource("5_rt2n2")]
-position = Vector2(48, 2095)
+position = Vector2(-256, 2080)
 
 [node name="PointLight2D6" parent="." instance=ExtResource("5_rt2n2")]
-position = Vector2(-543, 2065)
+position = Vector2(48, 2095)
