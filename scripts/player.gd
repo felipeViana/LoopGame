@@ -25,10 +25,6 @@ func _physics_process(delta: float) -> void:
 		velocity.x = speed * horizontal_direction
 		if horizontal_direction != 0:
 			flip_direction(horizontal_direction)
-	
-	
-		
-
 
 	move_and_slide()
 	update_animations(horizontal_direction)
